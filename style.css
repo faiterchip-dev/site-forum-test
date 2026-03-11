@@ -1,0 +1,207 @@
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: Arial;
+  background-image: url(https://wallpaperaccess.com/full/882739.jpg);
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover; /* cobre toda a tela */
+  background-position: center; /* centraliza a imagem */
+  background-repeat: no-repeat;
+}
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+.topbar {
+  background-image: linear-gradient(
+    rgb(0, 0, 0),
+    rgb(91, 89, 143),
+    rgb(115, 115, 115)
+  );
+  color: aliceblue;
+  margin: 1rem auto;
+  max-width: 120rem;
+  border-color: blue;
+  padding: 0.5rem;
+  font-size: 1.8rem;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  border-radius: 2rem;
+}
+.topbar h1 {
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+}
+.open-btn {
+  font-size: 2.3rem;
+  justify-self: start;
+  padding: 0rem 1.1rem 0rem 1.1rem;
+  margin: 0rem;
+  border-radius: 50rem;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  font-weight: bold;
+  color: white;
+}
+.open-btn:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 2.5rem;
+  color: black;
+}
+
+.sidebar {
+  position: fixed;
+  left: -250px;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background: #333;
+  padding-top: 60px;
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 2.5rem;
+  cursor:pointer;
+}
+
+.sidebar a:hover {
+  background: #575757;
+  font-size: 3rem;
+}
+
+.sidebar.active {
+  left: 0;
+}
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+.close-btn:hover {
+  color: red;
+}
+.sidebar-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* espaçamento entre os botões */
+}
+.bottom-btn {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #555;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* preto semi-transparente */
+  opacity: 0; /* invisível por padrão */
+  transition: opacity 0.9s;
+  z-index: 900; /* abaixo da sidebar (z-index da sidebar = 999) */
+  pointer-events: none; /* desativa clique quando invisível */
+}
+#overlay.active {
+  opacity: 1;
+  pointer-events: auto; /* ativa clique quando visível */
+}
+@media (max-width: 660px) { /* 660px */
+
+  /* topbar centralizada */
+  .topbar {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  /* titulo menor */
+  .topbar h1 {
+    font-size: 2rem;
+  }
+
+  /* botão do menu no centro */
+  .open-btn {
+    justify-self: center;
+  }
+
+  /* sidebar ocupa tela inteira */
+  .sidebar {
+    width: 100vw;
+    left: -100vw;
+    opacity: 0.9;
+     overflow-y: auto;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+}
+/* FUNÇÃO CALCULADORA */
+#calc-box{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+
+  width:22rem;
+  padding:1rem;
+
+  background:#222;
+  border-radius:1rem;
+
+  display:none;
+
+  z-index:2000;
+}
+
+#visor{
+  width:100%;
+  height:4rem;
+  font-size:2rem;
+  margin-bottom:1rem;
+}
+
+.calc-botoes{
+  display:grid;
+  grid-template-columns:repeat(4,1fr); /são 4 botoes em 1 coluna| 1fr | 1fr | 1fr | 1fr |/
+  gap:0.5rem;
+}
+
+.calc-botoes button{
+  height:4rem;
+  font-size:1.6rem;
+  cursor:pointer;
+}
+
+.limpar{
+  grid-column:span 4;
+  background:red;
+  color:white;
+}
+.botaoverde{
+    background-color: green;
+}
