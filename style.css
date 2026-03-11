@@ -128,7 +128,46 @@ body {
   opacity: 1;
   pointer-events: auto; /* ativa clique quando visível */
 }
-@media (max-width: 660px) { /* 660px */
+.bloco-de-apresentação{
+  padding: 1.9%;
+  background-image: linear-gradient(rgb(34, 0, 255),rgb(8, 0, 97),rgb(0, 0, 0));
+  display: grid;
+  grid-template-columns:repeat(3,1fr);
+  gap: 0.5rem;
+  text-align: center;
+  margin: 1rem;
+  border-radius: 0.5rem;
+  border: 0.5rem dashed rgb(0, 76, 255);
+  min-height: 15rem;
+}
+.titulo-coluna{
+   grid-column:span 3;
+   border: 0.5rem double darkblue;
+   background-image: linear-gradient(rgb(0, 0, 255),rgb(0, 0, 0));
+   margin: 1rem;
+   border-radius: 0.5rem;
+   max-height: 3rem;
+   font-size: 2rem;
+}
+.pequenos-blocos-apresentação{
+  font-size: 1.5em;
+  width: 100%;
+  min-height: 20rem;
+  margin: auto;
+  text-align: center;
+  max-width: 29rem;
+  border: 0.3rem solid transparent;
+  background: linear-gradient(45deg, #ff6b6b, #5f27cd);
+}
+@media (min-width:1260px){
+    .bloco-de-apresentação{
+      grid-template-columns:repeat(4,1fr);
+    }
+    .titulo-coluna{
+      grid-column: span 4;
+    }
+}
+@media (max-width: 650px){ /* 660px */
 
   /* topbar centralizada */
   .topbar {
@@ -158,8 +197,28 @@ body {
 
   .sidebar.active {
     left: 0;
+}
+}
+@media (max-width: 940px){
+    .bloco-de-apresentação{
+      grid-template-columns:repeat(2,1fr);
+    }
+    .titulo-coluna{
+      grid-column: span 2;
+    }
+}
+@media (max-width: 645px){
+    .bloco-de-apresentação{
+      grid-template-columns: 1fr;
+    }
+    .titulo-coluna{
+      grid-column: span 1;
+    }
+}
+@media (max-width: 370px){
+  .titulo-coluna{
+    font-size: 1rem;
   }
-
 }
 /* FUNÇÃO CALCULADORA */
 #calc-box{
@@ -178,6 +237,7 @@ body {
   z-index:2000;
 }
 
+
 #visor{
   width:100%;
   height:4rem;
@@ -187,7 +247,7 @@ body {
 
 .calc-botoes{
   display:grid;
-  grid-template-columns:repeat(4,1fr); /são 4 botoes em 1 coluna| 1fr | 1fr | 1fr | 1fr |/
+  grid-template-columns:repeat(4,1fr); /*são 4 botoes em 1 coluna| 1fr | 1fr | 1fr | 1fr |*/
   gap:0.5rem;
 }
 
