@@ -166,7 +166,7 @@ body {
     .titulo-coluna{
       grid-column: span 4;
     }
-}
+  }
 @media (max-width: 650px){ /* 660px */
 
   /* topbar centralizada */
