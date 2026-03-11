@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>top secret</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="overlay" onclick="toggleSidebar()"></div>
+    <header>  <!--    titulo do bagulho todo   -->
+      <nav class="topbar">
+        <button class="open-btn" onclick="toggleSidebar()">menu</button>
+        <h1>⊹ ࣪ ﹏𓊝﹏codex﹏place﹏𓂁﹏⊹ ࣪ ˖</h1>
+      </nav>
+    </header>
+    <main>  <!--    conteudo    -->
+      <section><!--    seção barra lateral      -->
+        <div id="sidebar" class="sidebar">
+          <button class="close-btn" onclick="toggleSidebar()">✖</button>
+          <a href="#">➤Início</a>
+          <a href="#">➤novo topico</a>
+          <a href="#">➤explorar</a>
+          <a onclick="abrirCalc()">➤Calculadora</a>
+          <a href="#">➤configurações</a>
+          <a href="#">➤feedback</a>
+        </div>
+      </section>
+      <section><!--    seção calculadora      -->
+        <div id="calc-box">
+          <input id="visor" type="text" readonly />
+
+          <div class="calc-botoes">
+            <button onclick="add('7')">7</button>
+            <button onclick="add('8')">8</button>
+            <button onclick="add('9')">9</button>
+            <button onclick="operacao('/')">÷</button>
+
+            <button onclick="add('4')">4</button>
+            <button onclick="add('5')">5</button>
+            <button onclick="add('6')">6</button>
+            <button onclick="operacao('*')">×</button>
+
+            <button onclick="add('1')">1</button>
+            <button onclick="add('2')">2</button>
+            <button onclick="add('3')">3</button>
+            <button onclick="operacao('-')">-</button>
+
+            <button onclick="add('0')">0</button>
+            <button onclick="add('.')">.</button>
+            <button class="botaoverde" onclick="calcular()">=</button>
+            <button onclick="operacao('+')">+</button>
+
+            <button onclick="limpar()" class="limpar">C</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
