@@ -130,20 +130,22 @@ body {
 }
 .bloco-de-apresentação{
   padding: 1.9%;
-  background-image: linear-gradient(rgb(34, 0, 255),rgb(8, 0, 97),rgb(0, 0, 0));
+  /* background-image: linear-gradient(#370617,#6a040f,#9d0208,#d00000,#dc2f02,#e85d04,#faa307,#ffba08,#e85d04,#d00000); */
+  background-image: radial-gradient(ellipse, white 0.1%,blue 30%, rgb(0, 0, 0) 90%);
   display: grid;
   grid-template-columns:repeat(3,1fr);
   gap: 0.5rem;
   text-align: center;
-  margin: 1rem;
+  margin: 1.9rem;
   border-radius: 0.5rem;
-  border: 0.5rem dashed rgb(0, 76, 255);
+  border: 0.5rem dashed #370617;
+  /* box-shadow:0px 0px 5px #d00000,  0 0 10px #d00000,0 0 20px #d00000,0 0 40px #d00000; */
   min-height: 15rem;
 }
 .titulo-coluna{
    grid-column:span 3;
    border: 0.5rem double darkblue;
-   background-image: linear-gradient(rgb(0, 0, 255),rgb(0, 0, 0));
+   background-image: linear-gradient(85deg,#0000b9,#0000cb,#6bc4ff,#5f27cd,rgb(0, 0, 0)99%);
    margin: 1rem;
    border-radius: 0.5rem;
    max-height: 3rem;
@@ -156,9 +158,31 @@ body {
   margin: auto;
   text-align: center;
   max-width: 29rem;
-  border: 0.3rem solid transparent;
-  background: linear-gradient(45deg, #ff6b6b, #5f27cd);
+  /* border: 0.3rem solid transparent; */
+  background: linear-gradient(130deg,rgba(255, 255, 255, 0) 5%, #ff6b6b,rgb(66, 66, 255), #5f27cd,rgba(0, 0, 255, 0));
+  display: grid;
+  grid-template-rows: auto 1fr;
 }
+.pequenos-blocos-apresentação p{
+  display: grid;
+  place-items: center;
+  padding: 0.5rem;
+  font-weight: 550;
+}
+#bloco-update { 
+   background: linear-gradient(130deg,rgba(255, 255, 255, 0) 5%, #f5ff6b,rgb(230, 255, 66), #cd8d27,rgba(0, 0, 255, 0));
+   transition: all 0.3s;
+  
+}
+#bloco-update:hover{
+   background: linear-gradient(130deg,rgba(255, 255, 255, 0) 5%, #cd8d27,rgb(230, 255, 66), #f5ff6b,rgba(0, 0, 255, 0));
+   color: white;
+   box-shadow: 0 0 10px white,
+              0 0 20px white,
+              0 0 30px white;
+}
+
+
 @media (min-width:1260px){
     .bloco-de-apresentação{
       grid-template-columns:repeat(4,1fr);
@@ -166,7 +190,7 @@ body {
     .titulo-coluna{
       grid-column: span 4;
     }
-  }
+}
 @media (max-width: 650px){ /* 660px */
 
   /* topbar centralizada */
